@@ -1,0 +1,38 @@
+--- evhttp.h
++++ evhttp.h
+@@ -114,6 +114,8 @@ int evhttp_accept_socket(struct evhttp *
+  */
+ void evhttp_free(struct evhttp* http);
+ 
++int evhttp_is_cbset(struct evhttp *, const char *);
++
+ /** Set a callback for a specified URI */
+ void evhttp_set_cb(struct evhttp *, const char *,
+     void (*)(struct evhttp_request *, void *), void *);
+
+
+--- http.c
++++ http.c
+@@ -2189,6 +2189,22 @@ evhttp_set_timeout(struct evhttp* http, 
+ 	http->timeout = timeout_in_secs;
+ }
+ 
++int
++evhttp_is_cbset(struct evhttp *http, const char *uri)
++{
++        struct evhttp_cb *http_cb;
++  
++	if (! uri)
++	  return 0;
++	
++	TAILQ_FOREACH(http_cb, &http->callbacks, next) {
++	  if (! strcmp (http_cb-> what, uri))
++	    return 1;
++	}
++
++	return 0; 
++}
++
+ void
+ evhttp_set_cb(struct evhttp *http, const char *uri,
+     void (*cb)(struct evhttp_request *, void *), void *cbarg)

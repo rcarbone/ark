@@ -1,0 +1,81 @@
+#
+# This is the master host file
+#
+# R. Carbone <rocco /at/ tecsiel /dot/ it>
+# 1Q 2008
+#
+
+#
+# All the timeouts are in milliseconds.
+#
+# 'connect' is the connect timeout, that is the amount of time after which
+# an asynchronous connect request has to be considered failed.
+#
+# 'idle' is the idle timeout, that is the amount of time after which
+# a connection will be locally dropped in the event of lack of activity.
+#
+# 'ack' is the response timeout, that is the amount of time after which
+# an asynchronous data request has to be considered failed.
+#
+# 'reconnect' is the reconnect timeout, that is the amount of time after which
+# an attempt to reconnect will be tried again.
+#
+# 'resend' is the resend timeout, that is the amount of time after which
+# a data request not yet acknowledged has to be resent.
+#
+
+# [smsc]
+# address     = tar      # Remote address
+# port        = 4001     # Remote port
+#
+# userid     = 5959      # Account in the event of authentication, required if the pwd is set - default none
+# pwd        = sum       # Password in the event of authentication, required if the userid is set - default none
+#
+# network    = Mobile    # Network Type - one of {Mobile, Wireline, Both} - Default Both
+#
+# connections = 2        # Count of connections to establish - default 1 (0 is illegal!)
+#
+# requests   = 1000      # Global count of packets to send over each connection - default 0 that means unlimited
+# window     = 40        # Window size - default 1 (0 is illegal)
+#
+# maxresend  = 1         # Max resend per request in the event of ack timeouts - default 0 that means none
+#
+# Protocol timeouts
+# connect    = 1000      # Connect timeout in msecs - default 2000 - (0 is illegal!)
+# idle       = 10000     # Idle timeout in msecs, 0 no inactivity timeout will be in effect
+# ack        = 3000      # Ack timeout in msecs, 0 no ack timeout will be in effect
+#
+# Application timeouts
+# reconnect  = 2000      # Reconnect timeout in msecs default 30000 - 0 means immediately
+# resend     = 1000      # Resend timeout in msecs, 0 immediately
+
+# Traffic options
+# showrecv   = true      # Boolean to show all incoming flow of messages
+# showsent   = true      # Boolean to show all outgoing flow of messages
+
+# RRD options
+# rrdfile      = counter.rdd # pathname of RRD file
+# rrdfunction  = AVERAGE     # RRD consolidation function (AVERAGE,, MAX, MIN, LAST)
+# rrdname      = datasource  # RRD data source name
+# rrdstep      = 30          # RRD update step
+# rrdheartbeat = 10          # RRD heartbeat
+
+[yes-1]
+address     = tar
+port        = 4001
+# connections = 1
+# connect     = 3000
+# idle        = 2000
+reconnect   = 2000
+# showrecv    = true
+# showsent    = true
+
+# [yes-2]
+# address     = thor
+# port        = 4001
+# connections = 1
+# reconnect   = 2000
+# showrecv    = true
+# showsent    = true
+
+

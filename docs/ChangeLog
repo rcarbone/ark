@@ -1,0 +1,40 @@
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+                                 _
+                       __ _ _ __| | __
+                      / _` | '__| |/ /
+                     | (_| | |  |   <
+                      \__,_|_|  |_|\_\
+
+ 'ark', is the home for asynchronous libevent-based plugins
+
+
+                  (C) Copyright 2007-2008
+         Rocco Carbone <rocco /at/ tecsiel /dot/ it>
+
+ Released under the terms of GNU General Public License
+ at version 3;  see included COPYING file for details
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+
+
+C h a n g e L o g
+=================
+
+Here is the list of all { significant | noteworthy | major | et al }
+changes to the implementation.
+
+The file NEWS contains a chronology of releases and major versions.
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+
+2008-07-27  Rocco Carbone <rocco /at/ tecsiel /dot/ it>
+	* Initial public release 0.1.0 announced to libvent mailing list
+
+	  FEATURES:
+	  * Runs under Linux 2.6.18
+	  * Uses libevent-1.4.5-stable
+	  * Has a demonstration main application 'noah'
+	  * Distribution includes both tutorial and production plugins
+	  * General documentation have been written
+	  * Minimal html download area at http://ark.tecsiel.it [82.187.228.118]

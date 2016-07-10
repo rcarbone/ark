@@ -1,0 +1,51 @@
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+                                 _
+                       __ _ _ __| | __
+                      / _` | '__| |/ /
+                     | (_| | |  |   <
+                      \__,_|_|  |_|\_\
+
+ 'ark', is the home for asynchronous libevent-based plugins
+
+
+                  (C) Copyright 2007-2008
+         Rocco Carbone <rocco /at/ tecsiel /dot/ it>
+
+ Released under the terms of GNU General Public License
+ at version 3;  see included COPYING file for details
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+
+This file lists people who have written or made
+significant contribution to the 'ark' project.
+
+Please take a look at the ChangeLog file for specific
+changes by authors, and look into the THANKS file for
+people who helped in various ways on this piece of software.
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
+
+
+A U T H O R S:
+==============
+
+* Me - Rocco Carbone <rocco /at/ tecsiel /dot/ it>
+  o Idea
+  o Design
+  o Core base implementation
+  o Several plugins (clients and servers for several protocols, sniffers, etc)
+  o Testing
+  o Documentation
+  o Maintainer
+
+
+* 'bambolina' - Valeria Lorenzetti <valeria.lorenzetti /at/ gmail /dot/ com>
+  o the ark-aware administration plugin webadmin, accesible via HTTP protocol, to remotely control other plugins
+  o all the stuff related to html
+  o patched the libevent to use OpenSSL with ongoing activities for using GNU TLS
+
+
+* 'rai' - Raimondo Mangione <raimondo_mangione /at/ hotmail /dot/ com>
+  o both client and server plugins talking standard UCP protocol
+

@@ -1,0 +1,180 @@
+
+[main]
+
+  # Files
+  #
+  # PidFile =
+  # LogFile =
+
+  # The directories where plugins are located
+  # PlgDir = /usr/local/big/modules
+
+  # Boolean to activate each plugin with the same main configuration file (the -c option is used) (default true)
+  # SameConf = false
+
+  # The list of plugins that should be loaded at boot time
+
+  #
+  # webadmin
+  #
+  # Plugin = webadmin.so
+
+  #
+  # null
+  #
+  # Plugin = "null.so -r"
+
+  #
+  # yes
+  #
+  # Plugin = "yes.so -s -r"
+
+  #
+  # no
+  #
+  # Plugin = "no.so -s -r"
+
+  #
+  # ucpd
+  #
+  # Plugin = ucpd.so
+
+  #
+  # eRRe
+  #
+  # Plugin = "eRRe.so -c /usr/local/etc/big.conf ucp://tar:4001 ucp://tar:4002 ucp://tar:4003 ucp://tar:4004"
+  # Plugin = eRRe.so
+
+  #
+  # ping
+  #
+  # Plugin = "ping.so -r -s -o 51 ucp://1234:maremma@tar.netikos.com:4001"
+  # Plugin = "ping.so -r -s -o 51 thor.netikos.com:2020"
+
+  #
+  # pong
+  #
+  Plugin = "pong.so -s -o 52"
+
+
+[webadmin]
+  # LogFile      = -
+  # AccessFile   = -
+  # EnableAdmin  = NO 
+  # Accounts     = 'rocco:123' 
+  # Accounts     = 'vale:123'
+  # Accounts     = 'raimondo:123' 
+  # ExpiredTime  = 180
+  # Listen       = *:5050
+  # HdColor      = "#ccccee"
+  # BgColor      = -
+
+# [null]
+
+# [yes]
+
+# [no]
+
+
+[ucpd]
+  # LogFile      = -
+  # AccessFile   = -
+  # Listen       = *:5959
+  # Backlog      = 256
+  # MaxConns     = 100
+  # Login        =
+  # Password     =
+  # LoginTimeout = 0
+  # IdleTimeout  = 0
+  # AckTimeout   = 2500
+  # Login        = 
+  # Password     = 
+  # ShowRecv     = true
+  # ShowSent     = true
+
+[smppd]
+  # LogFile      = -
+  # AccessFile   = -
+  # Listen       = *:5959
+  # Backlog      = 256
+  # MaxConns     = 100
+  # LoginTimeout = 0
+  # IdleTimeout  = 0
+  # AckTimeout   = 2500
+  # SMSCid       = 
+  # SystemId     = 
+  # Password     = 
+  # SystemType   = 
+  # ShowRecv     = true
+  # ShowSent     = true
+
+
+[eRRe]
+
+  # SMSC Hosts can be supplied:
+  #  1. via list of targets on the command line
+  #  2. via command line using the -f switch
+  #  3. via configuration file via the HostsFile variable
+  #
+  # They are processed in the same order.
+  #
+
+  # HostsFile      = /usr/local/big/etc/hosts.smsc
+  # LogFile        = -
+  # AccessFile     = -
+  # ConnectTimeout = 5000
+  # AckTimeout     = 2500
+  # ShowRecv       = true
+  # ShowSent       = true
+
+
+[ping]
+
+  # LogFile        = -
+  # AccessFile     = -
+  # ConnectTimeout = 5000
+  # AckTimeout     = 2500
+  # InitialTimeout = 5000
+  # DelayTimeout   = 0
+  # PushTimeout    = 500
+  # Operation      = 51
+  # Adc            =
+  # Oadc           =
+  # NotifyRequest  =
+  # ReplacePid     =
+  # ValidityPeriod =
+  # MsgType        =
+  # MsgText        =
+  # Xser           =
+  # MaxMsgs        =
+  # TimeLimit      =
+  # ShowRecv       = true
+  # ShowSent       = true
+
+
+[pong]
+
+  # LogFile      = -
+  # AccessFile   = -
+  # Listen       = *:5959
+  # Backlog      = 256
+  # MaxConns     = 100
+  # Login        =
+  # Password     =
+  # LoginTimeout = 0
+  # IdleTimeout  = 0
+  # AckTimeout   = 2500
+  # DelayTimeout = 0
+  # PushTimeout  = 500
+  # Operation    = 52
+  # Adc          =
+  # Oadc         =
+  # Rpid         =
+  # MsgType      =
+  # MsgText      =
+  # Xser         =
+  # MaxMsgs      =
+  # TimeLimit    =
+  # ShowRecv     = true
+  # ShowSent     = true
+
