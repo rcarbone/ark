@@ -20,7 +20,7 @@
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-
 #
 
-SUBDIRS = tutorial admin sniffers
+SUBDIRS = tutorial admin # sniffers
 
 all:
 	@for dir in ${SUBDIRS}; do \
