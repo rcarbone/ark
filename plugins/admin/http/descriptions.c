@@ -78,7 +78,7 @@ struct plg_t
 
 static void init_desctable (struct hash_table * desc, unsigned int size)
 {
-  memset (desc, 0, sizeof (desc));
+  memset (desc, '\0', sizeof (* desc));
   desc -> size = size;
 
   hash_table_init (desc);

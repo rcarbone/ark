@@ -26,7 +26,7 @@
 #include "hash.h"
 
 /* PRIMES: Simple prime number functions */
-inline
+static
 unsigned int find_prime (unsigned long max)
 {
   unsigned int i = 0;
