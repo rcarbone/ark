@@ -1,0 +1,41 @@
+# Executables
+noah
+icons/icon2h
+
+
+# Libraries
+*.a
+
+# Shared objects
+*.so
+
+# Object files
+*.o
+
+# Dependency files
+*.M
+
+# Backup files
+*~
+
+pub
+libevent
+libevent-1.4.5-stable/
+
+icons/*.h
+plugins/admin/http/background.h
+plugins/admin/http/banner.h
+plugins/admin/http/button.h
+plugins/admin/http/favicon.h
+plugins/admin/http/footer.h
+plugins/admin/http/header.h
+plugins/admin/http/logo.h
+plugins/admin/http/plghome.h
+plugins/admin/http/project.h
+plugins/admin/http/spider.h
+plugins/admin/http/wwwadmin.h
+
+plugins/tutorial/heartbeat-libevt
+plugins/tutorial/it_works.h
+plugins/tutorial/penguin.h
+

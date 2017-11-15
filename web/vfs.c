@@ -35,7 +35,7 @@
 void vfs_init (vfs * vfs, unsigned int size)
 {
   /* Initialize the hash table */
-  memset (vfs, 0, sizeof (vfs));
+  memset (vfs, '\0', sizeof (* vfs));
   vfs -> size = size;
 
   hash_table_init (vfs);

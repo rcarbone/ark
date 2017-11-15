@@ -32,7 +32,7 @@ LDFLAGS = -shared
 ARFLAGS = rs
 
 # Source, object and depend files
-SRCS    = ark-html.c ark-form.c gnode.c hash.c list.c vfs.c
+SRCS    = ark-html.c ark-form.c gnode.c vfs.c hash.c list.c
 OBJS    = $(patsubst %.c, %.o, ${SRCS})
 DEPS    = $(patsubst %.c, %.M, ${SRCS})
 
