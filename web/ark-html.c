@@ -515,7 +515,7 @@ char * counter (counter_t c)
 
   k = (k + 1) % HOWMANY;
 
-  sprintf (buffer [k], "%llu", c);
+  sprintf (buffer [k], "%zu", c);
 
   return buffer [k];
 }

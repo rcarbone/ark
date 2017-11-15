@@ -531,33 +531,33 @@ static void clientlogout (client_t * client, int reason)
 	{
 	case MEMORY:
 	  lis -> memory ++;
-	  fprintf (run -> accessfp, "%s [%s]: #%llu %s memory fault %s:%d\n",
+	  fprintf (run -> accessfp, "%s [%s]: #%zu %s memory fault %s:%d\n",
 		   progname, name, lis -> memory, client -> received ? "idle" : "login",
 		   client -> hostname, client -> port);
 	  break;
 
 	case TIMEOUT:
 	  lis -> timeout ++;
-	  fprintf (run -> accessfp, "%s [%s]: #%llu %s timeout expired %s:%d\n",
+	  fprintf (run -> accessfp, "%s [%s]: #%zu %s timeout expired %s:%d\n",
 		   progname, name, lis -> timeout, client -> received ? "idle" : "login",
 		   client -> hostname, client -> port);
 	  break;
 
 	case DECODING:
 	  lis -> decoding ++;
-	  fprintf (run -> accessfp, "%s [%s]: #%llu decoding error %s:%d\n",
+	  fprintf (run -> accessfp, "%s [%s]: #%zu decoding error %s:%d\n",
 		   progname, name, lis -> decoding, client -> hostname, client -> port);
 	  break;
 
 	case PROTOCOL:
 	  lis -> protocol ++;
-	  fprintf (run -> accessfp, "%s [%s]: #%llu protocol mismatch %s:%d\n",
+	  fprintf (run -> accessfp, "%s [%s]: #%zu protocol mismatch %s:%d\n",
 		   progname, name, lis -> protocol, client -> hostname, client -> port);
 	  break;
 
 	case HANGUP:
 	  lis -> hangup ++;
-	  fprintf (run -> accessfp, "%s [%s]: #%llu remote closed connection %s:%d\n",
+	  fprintf (run -> accessfp, "%s [%s]: #%zu remote closed connection %s:%d\n",
 		   progname, name, lis -> hangup, client -> hostname, client -> port);
 	  break;
 	}
@@ -627,7 +627,7 @@ static void data_callback (int unused, const short event, void * _client)
   lis -> received ++;
 
   if (client -> showrecv)
-    printf ("%s [%s]: #%llu <= %s [%s:%d #%llu]\n", progname, name,
+    printf ("%s [%s]: #%zu <= %s [%s:%d #%zu]\n", progname, name,
 	    lis -> received, line, client -> hostname, client -> port, client -> received);
 
   /* Skip leading spaces */
@@ -701,7 +701,7 @@ static void welcome_callback (int fd, short event, void * _server)
       server -> rejected ++;
 
       if (run -> accessfp)
-	fprintf (run -> accessfp, "%s [%s]: #%llu incoming connection from %s:%d rejected (cannot accept)\n",
+	fprintf (run -> accessfp, "%s [%s]: #%zu incoming connection from %s:%d rejected (cannot accept)\n",
 		 progname, name, server -> rejected, remote, port), fflush (run -> accessfp);
 
       if (remote)
@@ -717,7 +717,7 @@ static void welcome_callback (int fd, short event, void * _server)
       server -> rejected ++;
 
       if (run -> accessfp)
-	fprintf (run -> accessfp, "%s [%s]: #%llu incoming connection from %s:%d rejected (server busy)\n",
+	fprintf (run -> accessfp, "%s [%s]: #%zu incoming connection from %s:%d rejected (server busy)\n",
 		 progname, name, server -> rejected, remote, port), fflush (run -> accessfp);
 
       if (remote)
@@ -732,7 +732,7 @@ static void welcome_callback (int fd, short event, void * _server)
   server -> accepted ++;
 
   if (run -> accessfp)
-    fprintf (run -> accessfp, "%s [%s]: #%llu incoming connection from %s:%d accepted on fd %d\n",
+    fprintf (run -> accessfp, "%s [%s]: #%zu incoming connection from %s:%d accepted on fd %d\n",
 	     progname, name, server -> accepted, remote, port, clientfd), fflush (run -> accessfp);
 
   /* Allocate a new descriptor to store info about the calling application */

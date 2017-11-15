@@ -73,7 +73,7 @@ static void rmsession (session_t * s)
 /* Initialize the session table */
 static void init_sessiontable (struct hash_table * sessions, unsigned int size)
 {
-  memset (sessions, 0, sizeof (sessions));
+  memset (sessions, '\0', sizeof (* sessions));
   sessions -> size = size;
 
   hash_table_init (sessions);
